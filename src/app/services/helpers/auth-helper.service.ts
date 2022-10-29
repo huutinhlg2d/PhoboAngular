@@ -8,6 +8,7 @@ export class AuthHelper  {
     private authenticationChanged = new Subject<boolean>();
     constructor() {
     }
+    
     public isAuthenticated():boolean {
         return (!(window.localStorage['token'] === undefined || 
             window.localStorage['token'] === null ||
@@ -15,9 +16,11 @@ export class AuthHelper  {
             window.localStorage['token'] === 'undefined' ||
             window.localStorage['token'] === ''));
     }
+
     public isAuthenticationChanged():any {
         return this.authenticationChanged.asObservable();
     }
+
     public getToken(): any {
         if( window.localStorage['token'] === undefined || 
             window.localStorage['token'] === null ||

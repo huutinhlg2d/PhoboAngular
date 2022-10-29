@@ -3,21 +3,23 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { User } from '../models/user/user';
-import { BaseService } from './contracts/base-service.service';
+import { BaseApiService } from './contracts/base-service.service';
 import { AuthHelper } from './helpers/auth-helper.service';
+import { FormHelper } from './helpers/form-helper.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserServiceService extends BaseService{
+export class UserServiceService extends BaseApiService{
   
   private API_USER =  this.API_BASE + "Users/"
   
   constructor(
-    private http: HttpClient,
-    helper: AuthHelper
-  ) {
-    super(helper);
+    http: HttpClient,
+    formHelper: FormHelper
+  ) 
+  {
+    super(http);
   }
 
   public getAllEmployee(): Observable<Array<User>> {
