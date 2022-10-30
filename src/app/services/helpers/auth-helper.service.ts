@@ -8,9 +8,9 @@ export class AuthHelper  {
     private authenticationChanged = new Subject<boolean>();
     constructor() {
     }
-    
+
     public isAuthenticated():boolean {
-        return (!(window.localStorage['token'] === undefined || 
+        return (!(window.localStorage['token'] === undefined ||
             window.localStorage['token'] === null ||
             window.localStorage['token'] === 'null' ||
             window.localStorage['token'] === 'undefined' ||
@@ -22,7 +22,7 @@ export class AuthHelper  {
     }
 
     public getToken(): any {
-        if( window.localStorage['token'] === undefined || 
+        if( window.localStorage['token'] === undefined ||
             window.localStorage['token'] === null ||
             window.localStorage['token'] === 'null' ||
             window.localStorage['token'] === 'undefined' ||
@@ -36,7 +36,7 @@ export class AuthHelper  {
         this.setStorageToken(JSON.stringify(data));
     }
     public getUser() : any {
-        if( window.localStorage['token'] === undefined || 
+        if( window.localStorage['token'] === undefined ||
             window.localStorage['token'] === null ||
             window.localStorage['token'] === 'null' ||
             window.localStorage['token'] === 'undefined' ||
@@ -56,4 +56,5 @@ export class AuthHelper  {
         window.localStorage['token'] = value;
         this.authenticationChanged.next(this.isAuthenticated());
     }
+
 }
