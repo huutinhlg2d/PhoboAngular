@@ -25,6 +25,6 @@ export class NavbarComponent implements OnInit {
 
   logOut() {
     this.authHelper.logout();
-    this.router.navigateByUrl("/").then(() => window.location.reload());
+    this.router.navigateByUrl("/home").then(() => window.location.reload());
   }
 }
