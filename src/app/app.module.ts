@@ -11,6 +11,7 @@ import { AuthModule } from './components/auth/auth.module';
 import { httpInterceptorProviders } from './interceptors';
 import { HomeModule } from './components/home/home.module';
 import {NavbarModule} from "./components/navbar/navbar.module";
+import { BookingModule } from './components/booking/booking.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {NavbarModule} from "./components/navbar/navbar.module";
     AuthModule,
     HomeModule,
     FormsModule,
-    NavbarModule
+    NavbarModule,
+    BookingModule
   ],
   providers: [
     httpInterceptorProviders
