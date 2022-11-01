@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthModule } from './components/auth/auth.module';
 import { httpInterceptorProviders } from './interceptors';
 import { HomeModule } from './components/home/home.module';
+import {NavbarModule} from "./components/navbar/navbar.module";
+import { BookingModule } from './components/booking/booking.module';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { HomeModule } from './components/home/home.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,    
+    HttpClientModule,
     AuthModule,
     HomeModule,
-    FormsModule
+    FormsModule,
+    NavbarModule,
+    BookingModule
   ],
   providers: [
     httpInterceptorProviders

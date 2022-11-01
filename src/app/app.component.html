@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<app-navbar *ngIf="isLogged"></app-navbar>
+<div class="route-body-container">
+    <router-outlet></router-outlet>
+</div>

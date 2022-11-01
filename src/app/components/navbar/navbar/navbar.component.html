@@ -1,0 +1,27 @@
+<header>
+  <a class="" routerLink="/home">PhoBo</a>
+  <nav class="mr-5">
+    <ul class="nav__link">
+      <li><a routerLink="/employee/table">Employee</a></li>
+      <li><a routerLink="/project">Project</a></li>
+    </ul>
+  </nav>
+  <a class="current__user">
+    <button [matMenuTriggerFor]="menu" id="avatarBtn">
+      <img [src]="user?.avatarUrl" alt="avatar" class="avatar">
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+      <div id="user__info">
+        <img [src]="user?.avatarUrl" alt="avatar" id="avatarDetail">
+
+        <div class="user__detail">
+          <div id="user__name">{{user?.name}}</div>
+          <div id="user__mail">{{user?.email}}</div>
+        </div>
+      </div>
+      <mat-divider style="background-color: #92979a"></mat-divider>
+      <a mat-menu-item routerLink="/account/info">Manage account</a>
+      <a mat-menu-item (click)="logOut()">Sign out</a>
+    </mat-menu>
+  </a>
+</header>
