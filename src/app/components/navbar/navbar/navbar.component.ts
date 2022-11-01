@@ -3,6 +3,7 @@ import {AuthHelper} from "../../../services/helpers/auth-helper.service";
 import {Router} from "@angular/router";
 import {User} from "../../../models/user/user";
 import { Observable } from 'rxjs';
+import { ResourceHepler } from 'src/app/services/helpers/resource-hepler.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,7 +18,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private authHelper : AuthHelper,
-    private router: Router
+    private resource: ResourceHepler,
+    private router: Router,
   ) {
 
   }
@@ -34,4 +36,6 @@ export class NavbarComponent implements OnInit {
     this.authHelper.logout();
     this.router.navigateByUrl("/home");
   }
+
+  
 }

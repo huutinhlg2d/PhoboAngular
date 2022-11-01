@@ -25,14 +25,14 @@ const routes: Routes = [
       },
       {
         path: 'booking',
-        loadChildren: () => BookingRoutingModule
-      }
+        loadChildren: () => BookingRoutingModule,
+      },
     ],
   },
   {
-    path: 'login',
+    path: '',
     component: LoginLayoutComponent,
-    children: [{ path: '', component: LoginComponent }],
+    children: [{ path: 'login', component: LoginComponent }],
   },
   { path: 'forbiden', component: ForbiddenComponent },
   { path: '**', component: PageNotFoundComponent },
