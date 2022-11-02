@@ -11,6 +11,8 @@ import {User} from "../../../models/user/user";
 export class NavbarComponent implements OnInit {
 
   user: User;
+  isLogged: boolean;
+
 
   constructor(
     private authHelper : AuthHelper,
@@ -21,6 +23,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.authHelper.getUser();
+    this.isLogged = this.authHelper.isAuthenticated();
   }
 
   logOut() {

@@ -4,3 +4,8 @@
     align-items: center;
     height: 100vh;
 }
+
+.tab-photo-custom{
+  background-color: white;
+  min-height:450px ;
+}
