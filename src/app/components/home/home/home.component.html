@@ -11,47 +11,30 @@
 
 <body >
 
-<section class="closed-contests">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12" style="padding-top: 10%;">
-
-      </div>
-      <div class="col-lg-12">
-        <div class="section-heading text-center">
-          <h1>Welcome to PhoBo </h1>
-        </div>
-        <div class="border-button text-center">
-          <a routerLink="/login">Login</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
 <section class="popular-categories">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-3 col-sm-6">
+      <div *ngFor="let photographer of photographers; index as i;" class="col-lg-3 col-sm-6">
         <div class="popular-item tab-photo-custom">
           <div class="top-content">
             <div class="icon">
-              <img src="assets/images/icon-01.png" alt="">
+              <img src="{{photographer?.avatarUrl | resource}}" alt="" style="max-width: 100%">
             </div>
             <div class="right">
-              <h4>Nature Pic Contest</h4>
-              <span><em>126</em> Available Contests</span>
+              <h4>{{photographer?.name}}</h4>
+              <span *ngIf="photographer?.BookingConceptConfigs == null"><em>0</em></span>
+              <span *ngIf="photographer?.BookingConceptConfigs != null"><em>{{photographer?.BookingConceptConfigs?.id}}</em></span>
+              <p style="display: contents"> Available Concepts</p>
             </div>
           </div>
           <div class="thumb">
-            <img src="assets/images/popular-01.png" alt="">
+            <img src="assets/images/popular-02.png" alt="">
             <span class="category">Top Contest</span>
-            <span class="likes"><i class="fa fa-heart"></i> 256</span>
+            <span *ngIf="photographer?.Rate == null" class="likes"><i class="fa fa-heart"></i> 0</span>
+            <span *ngIf="photographer?.Rate != null" class="likes"><i class="fa fa-heart"></i> {{photographer?.Rate}}</span>
           </div>
           <div class="border-button">
-            <a href="contest-details.html">Browse Nature Pic Contests</a>
+            <a routerLink="/user-detail">Details</a>
           </div>
         </div>
       </div>
@@ -64,9 +47,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <p>Copyright © 2048 <a href="#">SnapX</a> Photo Contest Co., Ltd. All rights reserved.
-
-          Design: <a title="CSS Templates" rel="sponsored" href="https://templatemo.com/page/1" target="_blank">TemplateMo</a></p>
+        <p>PhoBo - Photographer Booking
       </div>
     </div>
   </div>

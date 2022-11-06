@@ -14,23 +14,25 @@ import { LoginLayoutModule } from './layouts/login-layout/login-layout.module';
 import { AppComponent } from './app.component';
 
 import { httpInterceptorProviders } from './interceptors';
+import {NavbarModule} from "./components/navbar/navbar.module";
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    BaseLayoutModule,
-    LoginLayoutModule,
-    AuthModule,
-    FormsModule,
-    BookingModule,
-    HomeModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        BaseLayoutModule,
+        LoginLayoutModule,
+        AuthModule,
+        FormsModule,
+        BookingModule,
+        HomeModule,
+        NavbarModule,
+    ],
   providers: [
     httpInterceptorProviders
   ],

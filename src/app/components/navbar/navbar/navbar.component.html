@@ -2,8 +2,9 @@
   <a class="" routerLink="/home">PhoBo</a>
   <nav class="mr-5">
     <ul class="nav__link">
-      <li><a routerLink="/employee/table">Employee</a></li>
-      <li><a routerLink="/project">Project</a></li>
+      <li *ngIf="user.userRole == 1" ><a routerLink="/employee/table">Booking</a></li>
+      <li *ngIf="!isPendingPhotographer && isLogged" ><a routerLink="/project">Booking Config</a></li>
+      <li><a routerLink="/project">History</a></li>
     </ul>
   </nav>
   <a class="current__user"  *ngIf="isLogged">
@@ -21,7 +22,9 @@
       </div>
       <mat-divider style="background-color: #92979a"></mat-divider>
       <a mat-menu-item routerLink="/account/info">Manage account</a>
-      <a mat-menu-item (click)="logOut()">Sign out</a>
+      <a *ngIf="isLogged" mat-menu-item (click)="logOut()">Sign out</a>
+
     </mat-menu>
   </a>
+  <a *ngIf="!isLogged" mat-menu-item routerLink="/login">Login</a>
 </header>

@@ -8,6 +8,7 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout/base-layo
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout/login-layout.component';
 import { BookingRoutingModule } from './routes/booking-routing.module';
 import { HomeRoutingModule } from './routes/home-routing.module';
+import {UserDetailModule} from "./components/user-detail/user-detail.module";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'booking',
         loadChildren: () => BookingRoutingModule,
+      },
+      {
+        path: 'user-detail',
+        loadChildren: () => UserDetailModule,
       },
     ],
   },
