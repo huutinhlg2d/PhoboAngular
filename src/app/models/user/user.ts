@@ -7,7 +7,7 @@ export interface User {
     email: string,
     avatarUrl: string,
     dateOfBirth: Date,
-    userRole: UserRole,
+    role: UserRole,
     gender: Gender,
     isDeleted: boolean,
 }

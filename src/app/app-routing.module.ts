@@ -27,6 +27,8 @@ const routes: Routes = [
         path: 'booking',
         loadChildren: () => BookingRoutingModule,
       },
+      { path: 'forbiden', component: ForbiddenComponent },
+      { path: 'notfound', component: PageNotFoundComponent },
     ],
   },
   {
@@ -34,8 +36,7 @@ const routes: Routes = [
     component: LoginLayoutComponent,
     children: [{ path: 'login', component: LoginComponent }],
   },
-  { path: 'forbiden', component: ForbiddenComponent },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '**', redirectTo: 'notfound' },
 ];
 
 @NgModule({

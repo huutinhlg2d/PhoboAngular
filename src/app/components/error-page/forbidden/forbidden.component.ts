@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import {Component, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-forbidden',
@@ -7,10 +9,19 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ForbiddenComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private location: Location,
+    private route: ActivatedRoute
+  ) {
+
   }
 
   ngOnInit(): void {
+    let stateUrl = this.route.snapshot.paramMap.get("stateUrl");
+    
+    if(stateUrl) {
+      this.location.replaceState(stateUrl);
+    }
   }
 
 }

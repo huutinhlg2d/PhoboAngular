@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,7 @@ import { LoginLayoutModule } from './layouts/login-layout/login-layout.module';
 import { AppComponent } from './app.component';
 
 import { httpInterceptorProviders } from './interceptors';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { httpInterceptorProviders } from './interceptors';
     HomeModule,
   ],
   providers: [
-    httpInterceptorProviders
+    httpInterceptorProviders, {provide: LOCALE_ID, useValue: 'en-US'}
   ],
   bootstrap: [AppComponent]
 })

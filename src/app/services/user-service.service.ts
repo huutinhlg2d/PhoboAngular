@@ -12,7 +12,8 @@ import { FormHelper } from './helpers/form-helper.service';
 })
 export class UserServiceService extends BaseApiService{
   
-  private API_USER =  this.API_BASE + "Users/"
+  private API_USER =  this.API_BASE + "User/"
+  private API_PHOTOGRAPHER =  this.API_BASE + "Photographer/"
   
   constructor(
     http: HttpClient,
@@ -24,5 +25,9 @@ export class UserServiceService extends BaseApiService{
 
   public getAllEmployee(): Observable<Array<User>> {
     return this.http.get<Array<User>>(this.API_USER);
+  }
+
+  public getPhotographer(id : any): Observable<User> {
+    return this.http.get<User>(`${this.API_PHOTOGRAPHER}${id}`);
   }
 }
