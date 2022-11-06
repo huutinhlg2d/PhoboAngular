@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         reponse => {
           console.log(reponse);
           this.authHelper.setToken(reponse)
-          this.router.navigateByUrl("/home").then(() => window.location.reload());
+          this.router.navigateByUrl("/home");
         }
       )
   }

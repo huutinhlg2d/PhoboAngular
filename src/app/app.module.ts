@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AuthModule } from './components/auth/auth.module';
-import { httpInterceptorProviders } from './interceptors';
 import { HomeModule } from './components/home/home.module';
-import {NavbarModule} from "./components/navbar/navbar.module";
 import { BookingModule } from './components/booking/booking.module';
+import { BaseLayoutModule } from './layouts/base-layout/base-layout.module';
+import { LoginLayoutModule } from './layouts/login-layout/login-layout.module';
+
+import { AppComponent } from './app.component';
+
+import { httpInterceptorProviders } from './interceptors';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,15 @@ import { BookingModule } from './components/booking/booking.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AppRoutingModule,
+    BaseLayoutModule,
+    LoginLayoutModule,
     AuthModule,
-    HomeModule,
     FormsModule,
-    NavbarModule,
-    BookingModule
+    BookingModule,
+    HomeModule,
   ],
   providers: [
     httpInterceptorProviders

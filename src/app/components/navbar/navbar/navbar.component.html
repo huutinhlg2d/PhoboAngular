@@ -8,11 +8,11 @@
   </nav>
   <a class="current__user"  *ngIf="isLogged">
     <button [matMenuTriggerFor]="menu" id="avatarBtn">
-      <img [src]="user?.avatarUrl" alt="avatar" class="avatar">
+      <img [src]="user?.avatarUrl | resource" alt="avatar" class="avatar">
     </button>
     <mat-menu #menu="matMenu" xPosition="before" >
       <div id="user__info">
-        <img [src]="user?.avatarUrl" alt="avatar" id="avatarDetail">
+        <img [src]="user?.avatarUrl | resource" alt="avatar" id="avatarDetail">
 
         <div class="user__detail">
           <div id="user__name">{{user?.name}}</div>

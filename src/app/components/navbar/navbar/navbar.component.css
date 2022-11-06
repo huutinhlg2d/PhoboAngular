@@ -23,7 +23,7 @@ li, a, button {
 }
 
 header {
-  height: 56px;
+  height: 7vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,7 +84,11 @@ header {
   display: inline-block;
 }
 
-/deep/ .mat-menu-content {
+::ng-deep .menu{
+  background-color: #343A40;
+}
+
+.mat-menu-content {
   width: 250px;
   padding: 0 !important;
 }
