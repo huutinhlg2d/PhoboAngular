@@ -4,11 +4,15 @@ import { CommonModule } from '@angular/common';
 import { BookingRoutingModule } from '../../routes/booking-routing.module';
 import { BookingComponent } from './booking/booking.component';
 import { MaterialModule } from '../material/material.module';
+import { PhotographerHistoryComponent } from './photographer-history/photographer-history.component';
+import { CustomerHistoryComponent } from './customer-history/customer-history.component';
 
 
 @NgModule({
   declarations: [
-    BookingComponent
+    BookingComponent,
+    PhotographerHistoryComponent,
+    CustomerHistoryComponent
   ],
   imports: [
     CommonModule,

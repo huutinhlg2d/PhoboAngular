@@ -26,9 +26,9 @@
                 <mat-form-field class="col-6">
                   <mat-label>Gender</mat-label>
                   <mat-select formControlName="gender">
-                    <mat-option value="MALE">Male</mat-option>
-                    <mat-option value="FEMALE">Female</mat-option>
-                    <mat-option value="OTHER">Other</mat-option>
+                    <mat-option value="Male">Male</mat-option>
+                    <mat-option value="Female">Female</mat-option>
+                    <mat-option value="Other">Other</mat-option>
                   </mat-select>
                   <mat-error *ngIf="form.get('gender')?.hasError('required') && form.get('gender')?.touched">
                     Gender is required
@@ -36,7 +36,9 @@
                 </mat-form-field>
                 <mat-form-field class="col-6">
                   <mat-label>Birthday</mat-label>
-                  <input matInput type="date" formControlName="birthday">
+                  <input matInput [matDatepicker]="picker" formControlName="birthday">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
                   <mat-error *ngIf="form.get('birthday')?.hasError('required') && form.get('birthday')?.touched">
                     Birthday is required
                   </mat-error>
@@ -44,25 +46,31 @@
               </div>
               <div class="row">
                 <mat-form-field class="col-12">
-                  <mat-label>Phone number</mat-label>
-                  <input matInput placeholder="Type phone number" formControlName="phoneNumber">
-                  <mat-error *ngIf="form.get('phoneNumber')?.hasError('required') && form.get('phoneNumber')?.touched">
-                    Phone Number is required
+                  <mat-label>Mail</mat-label>
+                  <input matInput placeholder="Type mail" formControlName="email">
+                  <mat-error *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+                    Mail is required
                   </mat-error>
-                  <mat-error *ngIf="form.get('phoneNumber')?.hasError('pattern') && form.get('phoneNumber')?.dirty">
-                    Phone Number must be match *** *** ****
+                  <mat-error *ngIf="form.get('email')?.hasError('email') && form.get('email')?.dirty">
+                    Please enter correct mail
                   </mat-error>
                 </mat-form-field>
               </div>
               <div class="row">
                 <mat-form-field class="col-12">
-                  <mat-label>Mail</mat-label>
-                  <input matInput placeholder="Type mail" formControlName="mail">
-                  <mat-error *ngIf="form.get('mail')?.hasError('required') && form.get('mail')?.touched">
-                    Mail is required
+                  <mat-label>Password</mat-label>
+                  <input type="password" matInput placeholder="Password" formControlName="password">
+                  <mat-error *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+                    Password is required
                   </mat-error>
-                  <mat-error *ngIf="form.get('mail')?.hasError('email') && form.get('mail')?.dirty">
-                    Please enter correct mail
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field class="col-12">
+                  <mat-label>Re-type Password</mat-label>
+                  <input type="password" matInput placeholder="Type name" formControlName="repassword">
+                  <mat-error *ngIf="form.get('repassword')?.hasError('required') && form.get('repassword')?.touched">
+                    Password is required
                   </mat-error>
                 </mat-form-field>
               </div>
@@ -70,8 +78,8 @@
                 <mat-form-field class="col-12">
                   <mat-label>Role</mat-label>
                   <mat-select formControlName="role">
-                    <mat-option value="MALE">Photographer</mat-option>
-                    <mat-option value="FEMALE">Customer</mat-option>
+                    <mat-option value="Photographer">Photographer</mat-option>
+                    <mat-option value="Customer">Customer</mat-option>
                   </mat-select>
                   <mat-error *ngIf="form.get('role')?.hasError('required') && form.get('role')?.touched">
                     Role is required

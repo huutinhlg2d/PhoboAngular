@@ -1,0 +1,89 @@
+<div class="mx-5">
+  <div class="d-flex justify-content-center">
+    <h2 class="project-table-heading h2">Employee Table</h2>
+  </div>
+
+
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" #empTbSortWithObject="matSort" matSort>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Photographer Column -->
+    <ng-container matColumnDef="photographerName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Photographer Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.photographerName}} </td>
+    </ng-container>
+
+    <!-- Concept Column -->
+    <ng-container matColumnDef="conceptName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Concept </th>
+      <td mat-cell *matCellDef="let element"> {{element.conceptName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bookingDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Day </th>
+      <td mat-cell *matCellDef="let element"> {{element.bookingDate | date:'dd/MM/yyyy'}} </td>
+
+    </ng-container>
+
+    <ng-container matColumnDef="bookingRate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Rate </th>
+      <td mat-cell *matCellDef="let element"> {{element.rate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="duration">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>
+      <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Location </th>
+      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="note">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Note  </th>
+      <td mat-cell *matCellDef="let element"> {{element.note}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status  </th>
+      <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef > Action</th>
+      <td mat-cell *matCellDef="let row" >
+        <button mat-stroked-button (click)="onCancel(row.id)">
+          <mat-icon>edit</mat-icon> Cancel
+        </button>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="100"
+                [pageSize]="5"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                aria-label="Select page">
+  </mat-paginator>
+</div>
+</div>
+
+
+
+
+
+
