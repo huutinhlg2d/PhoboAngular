@@ -5,7 +5,7 @@
             <div class="mb-2">
                 <mat-form-field >
                     <mat-select required formControlName="conceptId" placeholder="Concept" (selectionChange)="onConceptChange($event)">
-                        <mat-option *ngFor="let concept of concepts" [value]="concept.id">{{ concept.name }}</mat-option>
+                        <mat-option *ngFor="let conceptConfig of conceptConfigs" [value]="conceptConfig.concept.id">{{ conceptConfig.concept.name }}</mat-option>
                     </mat-select>
                     <mat-error>Error</mat-error>
                 </mat-form-field>

@@ -10,10 +10,12 @@ import { HomeModule } from './components/home/home.module';
 import { BookingModule } from './components/booking/booking.module';
 import { BaseLayoutModule } from './layouts/base-layout/base-layout.module';
 import { LoginLayoutModule } from './layouts/login-layout/login-layout.module';
+import { DialogModule } from './components/dialog/dialog.module';
 
 import { AppComponent } from './app.component';
 
 import { httpInterceptorProviders } from './interceptors';
+import { PhotographerModule } from './components/photographer/photographer.module';
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { httpInterceptorProviders } from './interceptors';
     FormsModule,
     BookingModule,
     HomeModule,
+    PhotographerModule,
   ],
   providers: [
     httpInterceptorProviders, {provide: LOCALE_ID, useValue: 'en-US'}
