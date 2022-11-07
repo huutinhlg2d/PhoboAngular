@@ -4,11 +4,10 @@ export interface BookingHistory {
   customerId: number;
   customerEmail: string;
   customerName: string;
-  photographerId: number;
   photographerName: string;
   photographerEmail: string;
   conceptName: string;
-  bookingDate: Date;
+  bookingDate: string;
   bookingRate: number;
   duration: number;
   location: string;
