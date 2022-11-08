@@ -34,7 +34,7 @@
             <span *ngIf="photographer?.Rate != null" class="likes"><i class="fa fa-heart"></i> {{photographer?.Rate}}</span>
           </div>
           <div class="border-button">
-            <a routerLink="/user-detail">Details</a>
+            <a routerLink="/user-detail/{{photographer.id}}">Details</a>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
 </section>
 
 
-<footer>
+<footer style="background-color: #3B5998">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">

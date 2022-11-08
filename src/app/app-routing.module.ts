@@ -9,6 +9,7 @@ import { LoginLayoutComponent } from './layouts/login-layout/login-layout/login-
 import { BookingRoutingModule } from './routes/booking-routing.module';
 import { HomeRoutingModule } from './routes/home-routing.module';
 import {UserDetailModule} from "./components/user-detail/user-detail.module";
+import {UserDetailRoutingModule} from "./routes/user-detail-routing.module";
 
 const routes: Routes = [
   {
@@ -29,8 +30,8 @@ const routes: Routes = [
         loadChildren: () => BookingRoutingModule,
       },
       {
-        path: 'user-detail',
-        loadChildren: () => UserDetailModule,
+        path: 'user-detail/:id',
+        loadChildren: () => UserDetailRoutingModule,
       },
     ],
   },

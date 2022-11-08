@@ -24,4 +24,8 @@ export class PhotographerServiceService extends BaseApiService{
   public getAllPhotographer(): Observable<Array<Photographer>> {
     return this.http.get<Array<Photographer>>(this.API_PHOTOGRAPHER);
   }
+
+  public getPhotographerById(id:number): Observable<Photographer> {
+    return this.http.get<Photographer>(this.API_PHOTOGRAPHER+"id?id="+id);
+  }
 }

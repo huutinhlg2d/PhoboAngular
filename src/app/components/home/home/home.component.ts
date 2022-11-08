@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
       (response: Photographer[]) => {
       this.photographers = response;
     });
-    alert(this.photographers.length);
   }
 
 }
