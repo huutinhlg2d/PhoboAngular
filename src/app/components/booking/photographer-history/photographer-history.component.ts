@@ -45,11 +45,8 @@ export class PhotographerHistoryComponent implements OnInit {
     this.bookingService.acceptRequest(booking.id).subscribe(
       data => {
         let index = this.bookingHistoryData.indexOf(booking);
-        this.bookingHistoryData[index].bookingState = data;
-        console.log(this.bookingHistoryData[index]);
-        this.dataSource.data = this.bookingHistoryData
-        //
-        this.dataSource._updateChangeSubscription();
+        this.bookingHistoryData[index].state = data;
+        this.dataSource.data = this.bookingHistoryData;
       }
     )
   }
@@ -58,11 +55,8 @@ export class PhotographerHistoryComponent implements OnInit {
     this.bookingService.declineRequest(booking.id).subscribe(
       data => {
         let index = this.bookingHistoryData.indexOf(booking);
-        this.bookingHistoryData[index].bookingState = data;
-        console.log(this.bookingHistoryData[index]);
-        this.dataSource.data = this.bookingHistoryData
-        // this.bookingHistoryData.splice(index,1);
-        // this.dataSource._updateChangeSubscription();
+        this.bookingHistoryData[index].state = data;
+        this.dataSource.data = this.bookingHistoryData;
       }
     )
   }

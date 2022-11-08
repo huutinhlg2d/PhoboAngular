@@ -12,5 +12,5 @@ export interface BookingHistory {
   duration: number;
   location: string;
   note: string;
-  bookingState: BookingState;
+  state: BookingState;
 }

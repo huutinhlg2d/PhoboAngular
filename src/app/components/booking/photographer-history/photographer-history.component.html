@@ -55,17 +55,23 @@
     </ng-container>
 
     <ng-container matColumnDef="state">
-      <th mat-header-cell *matHeaderCellDef> Status  </th>
+      <th mat-header-cell *matHeaderCellDef>Status</th>
       <td mat-cell *matCellDef="let element"> {{element.state}} </td>
     </ng-container>
 
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef > Action</th>
       <td mat-cell *matCellDef="let element">
-        <button mat-stroked-button color="warn" (click)="onDeny(element)" class="me-2" *ngIf="element.status == 3">
+        <!-- <button mat-stroked-button color="warn" (click)="onDeny(element)" class="me-2" *ngIf="element.status == 3">
           <mat-icon>thumb_down</mat-icon> Decline
         </button>
         <button mat-stroked-button color = "primary" (click)="onAccept(element)" *ngIf="element.status == 3">
+          <mat-icon>thumb_up</mat-icon> Accept
+        </button> -->
+        <button mat-stroked-button color="warn" (click)="onDeny(element)" class="me-2">
+          <mat-icon>thumb_down</mat-icon> Decline
+        </button>
+        <button mat-stroked-button color = "primary" (click)="onAccept(element)">
           <mat-icon>thumb_up</mat-icon> Accept
         </button>
       </td>

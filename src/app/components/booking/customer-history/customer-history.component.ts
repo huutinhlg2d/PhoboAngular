@@ -42,7 +42,7 @@ export class CustomerHistoryComponent implements OnInit {
     this.bookingService.declineRequest(booking.id).subscribe(
       data => {
         let index = this.bookingHistoryData.indexOf(booking);
-        this.bookingHistoryData[index].bookingState = data;
+        this.bookingHistoryData[index].state = data;
         this.dataSource.data=this.bookingHistoryData;
         // this.dataSource._updateChangeSubscription();
       }
